@@ -3,6 +3,10 @@
   const toggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
 
+  document.querySelectorAll('a[href="consultorio.html"]').forEach((link) => {
+    link.setAttribute('href', 'index.html');
+  });
+
   const closeMenu = () => {
     toggle?.setAttribute('aria-expanded', 'false');
     nav?.classList.remove('is-open');
