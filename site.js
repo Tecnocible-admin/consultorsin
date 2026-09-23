@@ -40,13 +40,11 @@
     event.preventDefault();
     const data = new FormData(contactForm);
     const message = [
-      'Se envió WhatsApp por el grupo de Web Consultorsin para Vo. Bo.',
-      '',
-      `Nombre: ${data.get('nombre') || ''}`,
-      `Teléfono / WhatsApp: ${data.get('telefono') || ''}`,
+      '¡Hola! Tengo una consulta.',
       `Asunto: ${data.get('asunto') || 'Consulta desde el sitio web'}`,
-      '',
-      `Mensaje: ${data.get('mensaje') || ''}`
+      `Mensaje: ${data.get('mensaje') || ''}`,
+      `Nombre: ${data.get('nombre') || ''}`,
+      `Tel/Whats: ${data.get('telefono') || ''}`
     ].join('\n');
     const status = document.querySelector('[data-form-status]');
     if (status) status.textContent = 'Abriendo WhatsApp…';

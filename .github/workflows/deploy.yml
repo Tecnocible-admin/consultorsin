@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          server-dir: /consultorsin.com/
+          server-dir: /consultorsin.com/consultorsin-main/
           local-dir: ./
           exclude: |
             **/.git*
