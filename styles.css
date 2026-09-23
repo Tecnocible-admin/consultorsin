@@ -424,7 +424,8 @@ h1 em, h2 em { color: var(--red); font-style: normal; }
 @media (max-width: 700px) {
   .shell { width: min(100% - 34px, var(--max)); }
   .hero { padding-top: 55px; }
-  .hero-copy h1 { font-size: clamp(3rem, 14vw, 4.8rem); }
+  /* Keep the longest headline word inside narrow phone screens. */
+  .hero-copy h1 { max-width: 100%; font-size: clamp(2.25rem, 11vw, 3.8rem); overflow-wrap: anywhere; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .hero-proof { grid-template-columns: 1fr; gap: 10px; margin-top: 45px; }
   .hero-visual { min-height: 490px; }
