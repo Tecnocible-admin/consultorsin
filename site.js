@@ -41,7 +41,7 @@
     const data = new FormData(contactForm);
     const message = [
       '¡Hola! Tengo una consulta.',
-      `Asunto: ${data.get('asunto') || 'Consulta desde el sitio web'}`,
+      `Servicio: ${data.get('asunto') || 'Consulta desde el sitio web'}`,
       `Mensaje: ${data.get('mensaje') || ''}`,
       `Nombre: ${data.get('nombre') || ''}`,
       `Tel/Whats: ${data.get('telefono') || ''}`
