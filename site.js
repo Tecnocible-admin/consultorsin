@@ -39,16 +39,18 @@
   contactForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = new FormData(contactForm);
-    const subject = encodeURIComponent(data.get('asunto') || 'Consulta desde el sitio web');
-    const body = encodeURIComponent([
+    const message = [
+      'Hola, quiero información sobre sus servicios.',
+      '',
       `Nombre: ${data.get('nombre') || ''}`,
       `Correo: ${data.get('correo') || ''}`,
       `Teléfono: ${data.get('telefono') || ''}`,
+      `Asunto: ${data.get('asunto') || 'Consulta desde el sitio web'}`,
       '',
       data.get('mensaje') || ''
-    ].join('\n'));
+    ].join('\n');
     const status = document.querySelector('[data-form-status]');
-    if (status) status.textContent = 'Abriendo tu aplicación de correo…';
-    window.location.href = `mailto:brunomorfincruz7@gmail.com?subject=${subject}&body=${body}`;
+    if (status) status.textContent = 'Abriendo WhatsApp…';
+    window.open(`https://wa.me/523121807074?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
   });
 })();
